@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'code.for.fun'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    include '**/*Test*'
+    testLogging.showStandardStreams = true
+    reports {
+        junitXml.enabled = true
+        html.enabled = true
+    }
+    useJUnitPlatform()
+}
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
+
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
+
+}
