@@ -19,6 +19,9 @@ test {
         html.enabled = true
     }
     useJUnitPlatform()
+    afterTest { descriptor, result ->
+        println "\n$descriptor.className [$descriptor.classDisplayName] > $descriptor.name [$descriptor.displayName]: $result.resultType"
+    }
 }
 
 dependencies {
